@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/* Body e main adaptáveis para diferentes tamanhos de tela */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+}
+
+main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Imagens dos cartões responsivas */
+.cartao-pokedev img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Ajuste para telas pequenas */
+@media screen and (max-width: 767px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 100%;
+        height: auto;
+    }
+
+    .cartao-pokedev {
+        width: 90%; /* Faz o cartão ocupar 90% da largura da tela */
+        margin: 10px auto;
+        padding: 20px;
+        box-sizing: border-box; /* Inclui padding na largura */
+    }
+
+    /* Ajuste os textos e espaçamentos dentro do cartão */
+    .cartao-pokedev .detalhes {
+        flex-direction: column; /* Coloca o título e o span em colunas no mobile */
+        align-items: flex-start; /* Alinha à esquerda */
+    }
+
+    .cartao-pokedev .nome, 
+    .cartao-pokedev .tipo {
+        font-size: 1.2em; /* Reduz o tamanho da fonte em telas pequenas */
+    }
+}
+
