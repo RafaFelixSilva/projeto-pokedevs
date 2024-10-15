@@ -6,7 +6,8 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+    overflow-x: hidden;
+    /* Evita barra de rolagem horizontal */
 }
 
 main {
@@ -17,11 +18,16 @@ main {
     align-items: center;
 }
 
-/* Imagens dos cartões responsivas */
+/* Imagens dentro dos cartões */
 .cartao-pokedev img {
-    max-width: 100%;
+    width: 100%;
+    /* Garante que a imagem ocupe toda a largura do contêiner */
+    max-width: 150px;
+    /* Limita a largura máxima da imagem */
     height: auto;
-    display: block;
+    /* Mantém a proporção da imagem */
+    object-fit: contain;
+    /* Garante que a imagem se ajuste dentro do contêiner */
 }
 
 /* Ajuste para telas pequenas */
@@ -38,21 +44,32 @@ main {
     }
 
     .cartao-pokedev {
-        width: 90%; /* Faz o cartão ocupar 90% da largura da tela */
+        width: 90%;
+        /* Faz o cartão ocupar 90% da largura da tela */
         margin: 10px auto;
         padding: 20px;
-        box-sizing: border-box; /* Inclui padding na largura */
+        height: auto;
+        min-height: 400px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Transição suave para o tamanho dos cartões */
+    .cartao-pokedev.aberto {
+        transition: all 0.3s ease-in-out;
     }
 
     /* Ajuste os textos e espaçamentos dentro do cartão */
     .cartao-pokedev .detalhes {
-        flex-direction: column; /* Coloca o título e o span em colunas no mobile */
-        align-items: flex-start; /* Alinha à esquerda */
+        flex-direction: column;
+        /* Coloca o título e o span em colunas no mobile */
+        align-items: flex-start;
+        /* Alinha à esquerda */
     }
 
-    .cartao-pokedev .nome, 
+    .cartao-pokedev .nome,
     .cartao-pokedev .tipo {
-        font-size: 1.2em; /* Reduz o tamanho da fonte em telas pequenas */
+        font-size: 1.2em;
+        /* Reduz o tamanho da fonte em telas pequenas */
     }
 }
-
